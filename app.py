@@ -475,7 +475,7 @@ def generate_pdf_profil_siswa(nama, data_siswa_dict, klaster, cluster_desc_map):
     for key, val in display_data.items():
         pdf.cell(0, 7, f"{key}: {val}", ln=True)
     try:
-        pdf_output = pdf.output(dest='S').encode('latin-1')
+        pdf_output = pdf.output(dest='S')
         return bytes(pdf_output)
     except Exception as e:
         st.error(f"Error saat mengonversi PDF: {e}. Coba pastikan tidak ada karakter aneh pada data.")
